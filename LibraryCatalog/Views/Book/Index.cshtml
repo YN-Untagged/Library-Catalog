@@ -1,0 +1,103 @@
+﻿@model IEnumerable<LibraryCatalog.ViewModels.BookAuthorViewModel>
+@using static LibraryCatalog.Models.Genres
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+    <form asp-controller="Book" asp-action="Index">
+        <h3>Genres: </h3><br />
+        @foreach (var genre in Enum.GetValues(typeof(Genres)))
+        {
+            <input name="genre" id="genre" class=" btn btn-dark" type="submit" value="@genre">
+        }
+        <br />
+        <p>Get all books from your favourite genre.</p>
+        <input class="btn btn-dark" type="submit" value="All Books"/>
+    </form>
+</div>
+<hr />
+
+<h1>Library Books</h1><br />
+<a asp-action="Create">Add new Book</a>
+
+<div class="row">
+    <label>Search Book</label><br />
+    <input style="width:500px" type="text" id="SearchTerm" value="" placeholder="Search by Title, ISBN, Publisher or Author" /> 
+</div>
+<br />
+
+<div class="flex-row" id="bookList">
+    @foreach (var item in Model)
+     { 
+        <div class="column">
+            <div class="card" id="bookCard">
+                <img class="books"src="~/images/@Html.DisplayFor(modelItem => item.URL)">
+                <div class="container">
+                    <h4><b>@Html.DisplayFor(modelItem => item.Title)</b></h4>
+                    <p>
+                        ISBN No.: <b>@Html.DisplayFor(modelItem => item.ISBN)</b><br />
+                        Author(s): <b>@Html.DisplayFor(modelItem => item.Name) @Html.DisplayFor(modelItem => item.Surname)</b><br />
+                        Genre: @Html.DisplayFor(modelItem => item.Genre)<br />
+                        Publisher: <b>@Html.DisplayFor(modelItem => item.Publisher)</b> (@Html.DisplayFor(modelItem => item.Year)) <br />
+
+                    </p>
+                    <a asp-action="Details" asp-route-id="@item.BookId"><i class="btn-danger">Details</i></a>
+                    <a asp-action="" asp-route-id=""><i class="btn-dark">Reserve</i></a>
+                </div>
+            </div>
+        </div>
+     }
+
+</div>
+
+@*<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>ISBN Number</th>
+            <th>Title</th>
+            <th>Number of Pages</th>
+            <th>Genre</th>
+            <th>Year</th>
+            <th>Publisher</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AllBooks)
+        {
+            <tr>
+                <td>
+
+                    <img class="bookcover" src="~/images/@Html.DisplayFor(modelItem => item.URL)" />
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ISBN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pages)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Publisher)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BookId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.BookId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.BookId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+    *@
