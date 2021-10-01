@@ -13,7 +13,7 @@ namespace LibraryCatalog.Models
         Biography,
         Fiction,
         Finance,
-        Fantacy,
+        Fantasy,
         Mystery,
         Horror,
         Thriller,
@@ -25,6 +25,7 @@ namespace LibraryCatalog.Models
         Adventure,
         Health,
         Cookbooks,
-        Guides
+        Guides,
+        Travel
     }
 }

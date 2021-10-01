@@ -1,0 +1,90 @@
+﻿@model LibraryCatalog.ViewModels.ReviewsViewModel
+
+<div class="row">
+    <a asp-controller="Book" asp-action="Details" asp-route-id="@Model.BookDetails.BookId">Back to Book Details</a>
+    <a asp-controller="Book" asp-action="Index">Book List</a>
+</div>
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <p><h3>Reviews for  @Model.BookDetails.Title </h3>(ISBN: @Model.BookDetails.ISBN)</p>
+        <div class="col-md-8">
+            
+            <div class="headings d-flex justify-content-between align-items-center mb-3 border" style="padding:50px;">
+                <p>
+                    Sign or register to write review<br />
+                    <a class="btn btn-info" asp-area="Identity" asp-page="/Account/Login">Signin</a>
+                </p>
+                
+                @if (User.IsInRole("Member"))
+                {
+                    <form asp-action="Create">
+                        <h4>Write Review</h4>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input asp-for="BookId" value="@Model.BookDetails.BookId" type="hidden" />
+                        <div class="form-group">
+                            <label asp-for="Rating"></label><br />
+                            <fieldset class="rating">
+                                <input type="radio" id="star5" name="rating" value="5" asp-for="Rating" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                <input type="radio" id="star4" name="rating" value="4" asp-for="Rating" /><label class="full" for="star4" title="Good - 4 stars"></label>
+                                <input type="radio" id="star3" name="rating" value="3" asp-for="Rating" /><label class="full" for="star3" title="Okay - 3 stars"></label>
+                                <input type="radio" id="star2" name="rating" value="2" asp-for="Rating" /><label class="full" for="star2" title="Bad - 2 stars"></label>
+                                <input type="radio" id="star1" name="rating" value="1" asp-for="Rating" /><label class="full" for="star1" title="Awful - 1 star"></label>
+                            </fieldset><br />
+                        </div>
+                        <div class="form-group">
+                            <textarea asp-for="Comment" placeholder="Write your review here..." rows="4" cols="80"></textarea>
+                            <span asp-validation-for="Comment" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Submit" class="btn btn-primary" />
+                        </div>
+                    </form>
+                }
+            </div>
+
+            <h1>Reviews</h1>
+            @foreach (var item in Model.GetReviews)
+            {
+                <div class="commentCard p-3 mt-2">
+                    <div class="d-lg-table-row">
+                        <div class="user d-lg-table-row flex-row align-items-center">
+                            @for (int s = 1; s < 6; s++)
+                            {
+                                <a>
+                                    @if (s <= item.Rating)
+                                    {
+                                        <i class="fa fa-star checked"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="fa fa-star"></i>
+                                    }
+                                </a>
+                            }
+                        </div>
+                        <div class="user d-lg-table-row flex-row align-items-center">
+                            <img src="~/images/User.png" width="30" class="user-img rounded-circle mr-2">
+                            <span>
+                                <small class="font-weight-bold text-primary">@Html.DisplayFor(modelItem => item.ApplicationUser.FirstName)</small>
+                                <small>@item.ReviewDate.ToShortDateString()</small><br />
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="action d-flex justify-content-between mt-2 align-items-center">
+                        <div class="reply px-4">
+                            <small>@Html.DisplayFor(modelItem => item.Comment)</small>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="row">
+    <a class="btn btn-dark" asp-controller="Book" asp-action="Details" asp-route-id="@Model.BookDetails.BookId">Back to Book Details</a>
+    <a class="btn btn-dark" asp-controller="Book" asp-action="Index">Book List</a>
+</div>
+
+
+

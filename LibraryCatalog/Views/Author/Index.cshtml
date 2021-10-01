@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LibraryCatalog.ViewModels.BookAuthorViewModel>
+﻿@model LibraryCatalog.ViewModels.BooksViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -20,13 +20,21 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model.Authors) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name) @Html.DisplayFor(modelItem => item.Surname)
+                @Html.DisplayFor(modelItem => item.FullName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                <table style="border:none">
+                    @foreach (var author in Model.BooksByAuthor)
+                     {
+                        @if (item.AuthorId == author.AuthorId)
+                         {
+                             <tr><td>@Html.DisplayFor(modelItem => author.Book.Title)</td></tr>
+                         }
+                     }
+                </table>
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.AuthorId">Edit</a> |
@@ -34,6 +42,7 @@
                 <a asp-action="Delete" asp-route-id="@item.AuthorId">Delete</a>
             </td>
         </tr>
-}
+
+        }
     </tbody>
 </table>

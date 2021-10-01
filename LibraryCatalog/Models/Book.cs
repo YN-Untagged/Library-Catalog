@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace LibraryCatalog.Models
         public int BookId { get; set; }
 
         [Required]
+        [MinLength(10)]
         [MaxLength(13)]
         public string ISBN { get; set; }
 
@@ -26,11 +28,24 @@ namespace LibraryCatalog.Models
 
         [Required]
         public int Year { get; set; }
-        public string URL { get; set; }
+
+        [DefaultValue("placeholder.jpg")]
+        public string Image { get; set; }
 
         [Required]
         public string Publisher { get; set; }
 
+        [DefaultValue("English")]
+        public string Language { get; set; }
+        public decimal Price { get; set; }
+
+        [DefaultValue("Available")]
+        public string Status { get; set; }
+        public string Description { get; set; } 
+        
         public virtual ICollection<BookAuthor> BookAuthors { get; set; }
+        public virtual ICollection<BookLoan> BookLoans { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

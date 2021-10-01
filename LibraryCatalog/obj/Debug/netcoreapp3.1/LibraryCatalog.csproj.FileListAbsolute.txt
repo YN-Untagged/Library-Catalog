@@ -1,46 +1,266 @@
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.pdb
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.Views.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.Views.pdb
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Text.Json.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.StaticWebAssets.xml
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.exe
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.deps.json
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.runtimeconfig.json
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.runtimeconfig.dev.json
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.pdb
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.Views.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.Views.pdb
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.csprojAssemblyReference.cache
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.AssemblyInfoInputs.cache
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.AssemblyInfo.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.csproj.CoreCompileInputs.cache
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.RazorAssemblyInfo.cache
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.RazorAssemblyInfo.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\staticwebassets\LibraryCatalog.StaticWebAssets.Manifest.cache
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\staticwebassets\LibraryCatalog.StaticWebAssets.xml
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\scopedcss\bundle\LibraryCatalog.styles.css
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.TagHelpers.input.cache
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.TagHelpers.output.cache
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.RazorCoreGenerate.cache
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.RazorTargetAssemblyInfo.cache
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.RazorTargetAssemblyInfo.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.Views.pdb
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.csproj.CopyComplete
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.pdb
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.genruntimeconfig.cache
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Author\Create.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Author\Delete.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Author\Details.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Author\Edit.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Author\Index.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Book\Create.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Book\Delete.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Book\Details.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Book\Edit.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Member\Create.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Member\Delete.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Member\Details.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Member\Edit.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Member\Index.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Librarian\Create.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Librarian\Delete.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Librarian\Details.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Librarian\Edit.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Librarian\Index.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DownloadPersonalData.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\PersonalData.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_StatusMessage.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_StatusMessage.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\bin\Debug\netcoreapp3.1\libman.json
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Create.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Delete.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Details.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Edit.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Index.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Librarian\DashBoard.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Member\DashBoard.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Requests.cshtml.g.cs
+C:\Users\leee\source\repos\final\LibraryCatalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\IssuedBooks.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\libman.json
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.StaticWebAssets.xml
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.exe
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.deps.json
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.runtimeconfig.json
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.runtimeconfig.dev.json
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.pdb
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.Views.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\LibraryCatalog.Views.pdb
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Azure.KeyVault.Core.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Azure.Storage.Blob.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Azure.Storage.Common.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Azure.WebJobs.Host.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Azure.WebJobs.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Azure.WebJobs.Extensions.SendGrid.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Azure.WebJobs.Host.Storage.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
@@ -57,15 +277,16 @@ C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\SendGrid.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
@@ -121,33 +342,18 @@ C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\linux-mips64\native\libe_sqlite3.so
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.AssemblyInfoInputs.cache
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.AssemblyInfo.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.csproj.CoreCompileInputs.cache
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.RazorAssemblyInfo.cache
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.RazorAssemblyInfo.cs
@@ -157,6 +363,21 @@ C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.TagHelpers.input.cache
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.TagHelpers.output.cache
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.RazorCoreGenerate.cache
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DownloadPersonalData.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\PersonalData.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_StatusMessage.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_StatusMessage.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Author\Create.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Author\Delete.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Author\Details.cshtml.g.cs
@@ -167,11 +388,37 @@ C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Book\Details.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Book\Edit.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Book\Main.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Book\Reviews.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Librarian\Create.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Librarian\DashBoard.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Librarian\Delete.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Librarian\Details.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Librarian\Edit.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Librarian\Index.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Create.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Delete.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Details.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Edit.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Index.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\IssuedBooks.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Outstanding.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Loan\Requests.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Member\Create.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Member\DashBoard.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Member\Delete.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Member\Details.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Member\Edit.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Member\Index.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Review\Create.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Review\Delete.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Review\Edit.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Review\Index.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BookList.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
@@ -183,4 +430,3 @@ C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.pdb
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.genruntimeconfig.cache
 C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\LibraryCatalog.csprojAssemblyReference.cache
-C:\Users\leee\source\repos\Library Catalog\LibraryCatalog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Edit.cshtml.g.cs

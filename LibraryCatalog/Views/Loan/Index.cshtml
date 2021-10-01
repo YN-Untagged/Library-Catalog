@@ -1,0 +1,91 @@
+﻿@model IEnumerable<LibraryCatalog.Models.BookLoan>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Book Loans</h1>
+
+<p>
+    <a asp-action="Create">Issue Book</a>
+</p>
+
+<div class="form-group">
+    <div class="form-control" style="width:570px">
+        <input style="width:500px; border:none" type="text" id="searchInput" value="" placeholder="Search member" onkeyup="SearchTable()" />
+        <i class="fa fa-search"></i>
+    </div>
+</div>
+<br />
+
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+            <th>
+                Member
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book)
+            </th>
+            <th>
+                Returned
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationUser.FirstName) @Html.DisplayFor(modelItem => item.ApplicationUser.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book.Title)<br />
+                    ISBN: (@Html.DisplayFor(modelItem => item.Book.ISBN))
+                </td>
+                <td>
+                    @if (item.ReturnDate.Year != 0001)
+                    {
+                        <p>Yes</p>
+                    }
+                    else if (item.ReturnDate.Year == 0001 && item.IssuedBy != null)
+                    {
+                        <p>No</p>
+                    }
+                    else
+                    {
+                        <p>Pending Approval</p>
+                    }
+                </td>
+
+
+                <td>
+                    @if (item.IssuedBy == null)
+                    {
+                        <form asp-action="Issue" asp-route-id="@item.BookLoanId">
+                            <button class="btn-success" name="issueButton" value="Issue" type="submit">Approve</button>
+                            <button class="btn-danger" name="issueButton" value="Reject" type="submit">Reject</button>
+                        </form>
+                    }
+                    @if (item.Fine == true && item.FineSettled == false)
+                    {
+                        <form asp-action="Return" asp-route-id="@item.BookLoanId">
+                            <button class="btn-warning" name="btnEdit" value="Settle" type="submit">Settle Fine & Return</button>
+                        </form>
+                    }
+                    @if (item.ReturnDate.Year == 0001 && item.IssuedBy != null)
+                    {
+                        <form asp-action="Return" asp-route-id="@item.BookLoanId" method="post">
+                            <button class="btn-info" name="btnEdit" value="Return" type="submit">Return</button>
+                        </form>
+                    }
+                    @*<a asp-action="Edit" asp-route-id="@item.BookLoanId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.BookLoanId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.BookLoanId">Delete</a>*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

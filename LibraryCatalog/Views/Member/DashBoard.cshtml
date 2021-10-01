@@ -1,0 +1,219 @@
+﻿@model LibraryCatalog.ViewModels.LoanViewModel
+
+@{
+    ViewData["Title"] = "Dash Board";
+}
+
+<div class="text-center">
+    <h1>Dash Board</h1>
+    
+</div>
+<div class="row" style="background-color: gainsboro;border-radius: 10px; padding: 10px; margin-bottom: 10px;">
+    <h3>Account Details</h3>
+    <dl class="row">
+        <dt class="col-lg-2">Full Names</dt>
+        <dd class="col-lg-10">
+            @ViewBag.userDetails.FirstName @ViewBag.userDetails.LastName
+        </dd>
+        <dt class="col-lg-2">Email</dt>
+        <dd class="col-lg-10">
+            @ViewBag.userDetails.Email
+        </dd>
+        <dt class="col-lg-2">Phone Number</dt>
+        <dd class="col-lg-10">
+            @ViewBag.userDetails.PhoneNumber
+        </dd>
+        <dt class="col-lg-2">Date of Birth</dt>
+        <dd class="col-lg-10">
+            @((ViewBag.userDetails.DateOfBirth).ToShortDateString())
+        </dd>
+        <dd class="col-lg-10">
+            <a class="btn btn-info" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Manage Account</a>
+        </dd>
+    </dl>
+    
+</div>
+@if (Model.GetRequested.Any())
+{
+<div class="row" style="border-block: 1px;border-radius: 10px; padding: 10px; margin-bottom:10px;">
+    <h3>Pending Book Requests</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Book Title</th>
+                <th>ISBN</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.GetRequested)
+            {
+                <tr>
+                    <td><img src="~/images/@item.Book.Image" style="width:80px; height:100px;" /> </td>
+                    <td>@Html.DisplayFor(modelItem => item.Book.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Book.ISBN)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<hr />
+}
+
+@if (Model.GetReserved.Any())
+{
+<div class="row" style="border-block: 1px;border-radius: 10px; padding: 10px; margin-bottom:10px;">
+    <h3>Your Reservations</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Return Date</th>
+                <th>Book Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.GetReserved)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Book.Title) <br />
+                    ISBN: @Html.DisplayFor(modelItem => item.Book.ISBN)
+                </td>
+                <td>@Convert.ToDateTime(item.ExpectedDate).ToShortDateString()</td>
+                <td>
+                    @if (item.BookReturned == true)
+                    {
+                        <p style="color:forestgreen">Book is now available.</p>
+                    }
+                    else
+                    {
+                        <p style="color:red">Book is checked out. You will be notified when it's available</p>
+                    }
+                </td>
+                <td>
+                    @if (item.BookReturned == true)
+                    {
+                        <form asp-controller="Loan" asp-action="Create" asp-route-id="@item.ReservationId">
+                            <button class="btn btn-success" type="submit" name="btnCreate" value="ReserverRequest">Request Book</button>
+                        </form>
+                    }
+                    <a class="btn btn-danger" asp-controller="Loan" asp-action="Reserve" asp-route-id="@item.ReservationId" asp-route-btnReserve="Cancel">Cancel</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    
+</div>
+<hr />
+}
+
+@if (Model.GetOverDued.Any())
+{
+<div class="row" style="border-block: 1px;border-radius: 10px; padding: 10px; margin-bottom:10px;">
+    <h3>OverDued Books</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Due Date</th>
+                <th>Days Overdue</th>
+                <th>Amount Owed</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.GetOverDued)
+            {
+                ;
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Book.Title)
+                    </td>
+                    <td>@item.ReturnByDate.ToShortDateString()</td>
+                    <td>
+                        @((System.DateTime.Today.Date - item.ReturnByDate.Date).Days)
+                    </td>
+                    <td>
+                        R @Html.DisplayFor(modelItem => item.FineAmount)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<hr />
+}
+@if (Model.GetCheckedOut.Any())
+{
+    <div class="row" style="border-block: 1px;border-radius: 10px;padding: 10px;margin-bottom: 10px;">
+        <h3>Your Checked Out Books</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Book Title</th>
+                    <th>Due Date</th>
+                    <th>Days Remaining</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.GetCheckedOut)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Book.Title)
+                        </td>
+                        <td>@item.ReturnByDate.ToShortDateString()</td>
+                        <td>@((item.ReturnByDate.Date - System.DateTime.Today.Date).Days) days</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@if (Model.GetBookLoans.Any())
+{
+<div class="row" style="border-block: 1px;border-radius: 10px; padding: 10px; margin-bottom:10px;">
+    <h3>Book History</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Due Date</th>
+                <th>Overdue </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.GetBookLoans)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Book.Title)
+                    </td>
+                    <td>@item.ReturnByDate.ToShortDateString()</td>
+                    <td>
+                        @if (item.Fine == true)
+                        {
+                            <p>Yes</p>
+                        }
+                        else
+                        {
+                            <p>No</p>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}

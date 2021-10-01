@@ -10,6 +10,7 @@ namespace LibraryCatalog.Models
     public class BookAuthor
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BookAuthorId {get; set;}
 
         [ForeignKey("AuthorId")]

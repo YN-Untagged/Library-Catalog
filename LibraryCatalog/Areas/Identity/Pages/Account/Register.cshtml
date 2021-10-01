@@ -1,0 +1,99 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    var roles = (List<IdentityRole>)ViewData["roles"];
+}
+<div class="row d-flex align-items-center">
+    <div class="container align-items-center">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div class="login">
+                <div class="login-screen">
+                    <div class="app-title">
+                        <img src="~/images/signup.jpg" class="avatar" />
+                        <h1>Register Account</h1>
+                    </div>
+                    
+                    <div class="login-form">
+                        <div class="control-group">
+                            <label class="form-check-label" asp-for="Input.FirstName"></label><br />
+                            <input asp-for="Input.FirstName" class="login-field" /><br />
+                            <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="control-group">
+                            <label class="form-check-label" asp-for="Input.LastName"></label><br />
+                            <input asp-for="Input.LastName" class="login-field" /><br />
+                            <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                        </div>
+                        <div class="control-group">
+                            <label class="form-check-label" asp-for="Input.Gender"></label><br />
+                            <select asp-for="Input.Gender" class="login-field">
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                            </select><br />
+                            <span asp-validation-for="Input.Gender" class="text-danger"></span>
+                        </div>
+                        <div class="control-group">
+                            <label class="form-check-label" asp-for="Input.DateOfBirth"></label><br />
+                            <input asp-for="Input.DateOfBirth" class="login-field" /><br />
+                            <span asp-validation-for="Input.DateOfBirth" class="text-danger"></span>
+                        </div>
+                        <div class="control-group">
+                            <label class="form-check-label" asp-for="Input.PhoneNumber"></label><br />
+                            <input asp-for="Input.PhoneNumber" class="login-field" /><br />
+                            <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="form-check-label" asp-for="Input.Email"></label><br />
+                            <input asp-for="Input.Email" class="login-field"><br />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="form-check-label" asp-for="Input.Password"></label><br />
+                            <input asp-for="Input.Password" class="login-field"><br />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Input.ConfirmPassword"></label><br />
+                            <input asp-for="Input.ConfirmPassword" class="login-field" /><br />
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        @if (User.IsInRole("Administrator"))
+                        {
+                            <div class="form-group">
+                                <label asp-for="Input.Name"></label><br />
+                                <select asp-for="Input.Name" asp-items='new SelectList(roles, "Id", "Name")' class="login-field"></select><br />
+                                <span asp-validation-for="Input.Name" class="text-danger"></span>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary">Add User</button>
+                        }
+                        else if (User.IsInRole("Librarian"))
+                        {
+                            <input asp-for="Input.Role" value="Member" hidden />
+                            <button type="submit" class="btn btn-primary">Add Member</button>
+                        }
+                        else
+                        {
+                            <input asp-for="Input.Role" value="Member" hidden />
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            <br />
+                            <p>Already have an account? <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl"> Click here to login </a ></p>
+
+
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

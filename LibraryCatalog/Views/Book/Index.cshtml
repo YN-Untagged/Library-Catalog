@@ -1,103 +1,166 @@
-﻿@model IEnumerable<LibraryCatalog.ViewModels.BookAuthorViewModel>
-@using static LibraryCatalog.Models.Genres
+﻿@using static LibraryCatalog.Models.Genres
+@model LibraryCatalog.ViewModels.BooksViewModel
 
 @{
     ViewData["Title"] = "Index";
+    int rate = 0;
+    int counter = 0;
 }
-<div class="row">
-    <form asp-controller="Book" asp-action="Index">
-        <h3>Genres: </h3><br />
-        @foreach (var genre in Enum.GetValues(typeof(Genres)))
-        {
-            <input name="genre" id="genre" class=" btn btn-dark" type="submit" value="@genre">
-        }
-        <br />
-        <p>Get all books from your favourite genre.</p>
-        <input class="btn btn-dark" type="submit" value="All Books"/>
-    </form>
-</div>
-<hr />
 
-<h1>Library Books</h1><br />
-<a asp-action="Create">Add new Book</a>
-
-<div class="row">
-    <label>Search Book</label><br />
-    <input style="width:500px" type="text" id="SearchTerm" value="" placeholder="Search by Title, ISBN, Publisher or Author" /> 
-</div>
-<br />
-
+<h1>Most popular books</h1>
 <div class="flex-row" id="bookList">
-    @foreach (var item in Model)
-     { 
+    @foreach (var item in Model.PopularBooks)
+    {
+        counter++;
         <div class="column">
             <div class="card" id="bookCard">
-                <img class="books"src="~/images/@Html.DisplayFor(modelItem => item.URL)">
-                <div class="container">
-                    <h4><b>@Html.DisplayFor(modelItem => item.Title)</b></h4>
-                    <p>
-                        ISBN No.: <b>@Html.DisplayFor(modelItem => item.ISBN)</b><br />
-                        Author(s): <b>@Html.DisplayFor(modelItem => item.Name) @Html.DisplayFor(modelItem => item.Surname)</b><br />
-                        Genre: @Html.DisplayFor(modelItem => item.Genre)<br />
-                        Publisher: <b>@Html.DisplayFor(modelItem => item.Publisher)</b> (@Html.DisplayFor(modelItem => item.Year)) <br />
-
-                    </p>
-                    <a asp-action="Details" asp-route-id="@item.BookId"><i class="btn-danger">Details</i></a>
-                    <a asp-action="" asp-route-id=""><i class="btn-dark">Reserve</i></a>
-                </div>
+                <div class="card-header"><h2>Position: #@counter</h2></div>
+                <a class="card-body" asp-controller="Book" asp-action="Details" asp-route-id="@item.BookId">
+                    <img style="width: 300px; height: 350px;" src="~/images/@Html.DisplayFor(modelItem => item.Image)">
+                </a>
+                <p>@item.Title</p>
             </div>
         </div>
-     }
-
+        if (counter == 3)
+        {
+            break;
+        }
+    }
 </div>
 
-@*<table class="table">
-    <thead>
-        <tr>
-            <th></th>
-            <th>ISBN Number</th>
-            <th>Title</th>
-            <th>Number of Pages</th>
-            <th>Genre</th>
-            <th>Year</th>
-            <th>Publisher</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.AllBooks)
+
+        <h3>Genres: </h3>
+        <br />
+
+        <form asp-controller="Book" asp-action="Index">
+            <div class="row align-text-bottom">
+                @foreach (var genre in Enum.GetValues(typeof(Genres)))
+                {
+
+                    <input name="genre" type="submit" value="@genre" style="background:none; border: 2px solid grey; border-radius:5px; padding:10px; margin:10px;" />
+                }
+            </div>
+            <br />
+            <p>Get all books from your favourite genre.</p>
+            <input class="btn btn-dark" type="submit" value="All Books" />
+        </form>
+
+        <hr />
+
+        <h1>Library Books</h1>
+        <br />
+
+        @if (User.IsInRole("Administrator") || User.IsInRole("Librarian"))
         {
-            <tr>
-                <td>
-
-                    <img class="bookcover" src="~/images/@Html.DisplayFor(modelItem => item.URL)" />
-
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ISBN)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Pages)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Publisher)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.BookId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.BookId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.BookId">Delete</a>
-                </td>
-            </tr>
+            <a class="btn btn-dark" asp-action="Create">Add new Book</a>
+            <br />
         }
-    </tbody>
-</table>
-    *@
+
+        <div class="form-group">
+            <div class="form-control" style="width:560px">
+                <input style="width:500px; border:none" type="text" id="SearchTerm" value="" placeholder="Search by Title, ISBN, Publisher or Author" />
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+        <br />
+
+        <div class="flex-row" id="bookList">
+            @foreach (var item in Model.AllBooks)
+            {
+                if (Model.AllBooks != null)
+                {
+
+                    <div class="column">
+                        <div class="card" id="bookCard">
+                            <a class="card-header" asp-controller="Book" asp-action="Details" asp-route-id="@item.BookId">
+                                <p>
+                                    @for (int r = 0; r <= Model.GetBooksRating.GetUpperBound(0); r++)
+                                    {
+                                        if (Model.GetBooksRating[r, 0] == item.BookId)
+                                        {
+                                            rate = Model.GetBooksRating[r, 1];
+                                            break;
+                                        }
+                                        rate = 0;
+                                    }
+
+                                    @for (int s = 1; s < 6; s++)
+                                    {
+                                        if (s <= rate)
+                                        {
+                                            <span class="fa fa-star checked"></span>
+                                        }
+                                        else
+                                        {
+                                            <span class="fa fa-star"></span>
+                                        }
+                                    }
+                                    (@item.Reviews.Count reviews)
+                                </p>
+                            </a>
+                            <br />
+                            @if (item.Status == "Available")
+                            {
+                                <div class="status" style="background-color:green; color:white;">@item.Status</div>
+                            }
+                            else if (item.Status == "Checked_Out")
+                            {
+                                <div class="status" style="background-color:red; color:white;">@item.Status</div>
+                            }
+                            else
+                            {
+                                <div class="status" style="background-color:black; color:white;">@item.Status</div>
+                            }
+                            <img class="books" src="~/images/@Html.DisplayFor(modelItem => item.Image)">
+                            <div class="container">
+                                <h4><b>@Html.DisplayFor(modelItem => item.Title)</b></h4>
+                                <p>
+                                    ISBN No.: <b>@Html.DisplayFor(modelItem => item.ISBN)</b><br />
+                                    Author(s):
+                                    <b>
+                                        @foreach (var author in Model.BookAuthors)
+                                        {
+                                            @if (item.BookId == author.BookId)
+                                            {
+                                                @Html.DisplayFor(modelItem => author.AuthorName)<span>* </span>
+                                            }
+
+                                        }
+                                    </b><br />
+
+                                    Genre: @Html.DisplayFor(modelItem => item.Genre)<br />
+                                    Publisher: <b>@Html.DisplayFor(modelItem => item.Publisher)</b> (@Html.DisplayFor(modelItem => item.Year)) <br />
+
+                                </p>
+                                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.BookId">Details</a>
+                                @if (item.Status == "Available")
+                                {
+                                    <a class="btn btn-dark" asp-controller="Loan" asp-action="Create" asp-route-id="@item.BookId">Loan</a>
+                                }
+                                else if (item.Status == "Checked_Out")//|| item.Status == "Reserved")
+                                {
+                                    <a class="btn btn-dark" asp-controller="Loan" asp-action="Reserve" asp-route-id="@item.BookId" asp-route-btnReserve="Reserve">Reserve</a>
+                                }
+                            </div>
+                            <div class="card-footer">
+                                <div style="text-align:right;">
+                                    <a style="color:blue;">Shop here >></a>
+                                    <a href="https://www.amazon.com/books/s?k= @item.Title" target="_blank">
+                                        <i><img src="~/images/amazon.jpg" class="icon" style="width:30px; height:30px;" /></i>
+                                    </a>
+                                    <a href="https://www.takealot.com/all?_sb=1&_r=1&qsearch= @item.Title" target="_blank">
+                                        <i><img src="~/images/takealot.png" class="icon" style="width:30px; height:30px;" /></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="column"><h4>Library Catalog is Empty</h4></div>
+                }
+            }
+        </div>
+
+

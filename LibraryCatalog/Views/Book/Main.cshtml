@@ -1,0 +1,61 @@
+﻿@model LibraryCatalog.ViewModels.BooksViewModel
+
+
+@if (Model.NewBooks.Any())
+{
+    <div class="container" style="max-width:800px">
+        @foreach (var item in Model.NewBooks)
+        {
+            <div class="wrapper wrapper-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="ibox ">
+                                <div class="ibox-title">
+                                    <h5>All books in catalog</h5>
+                                </div>
+
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h1 class="no-margins">@Model.GetBooks.Count()</h1>
+                                            <div class="font-bold text-navy"><small>All books</small></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+}
+
+@if (Model.PopularBooks.Any())
+{
+    @*<div class="mycontainer">
+            <ul id="autoWidth" class="cs-hidden">
+                @foreach (var item in Model.PopularBooks)
+                {
+                    <li class="item-a">
+                        <!--slider-box-->
+                        <div class="box">
+                            <p class="myTitle">@item.Title</p>
+                            <!--model-->
+                            <img src="~/images/@item.Image" class="model">
+                            <div class="details">
+                                <p></p>
+                            </div>
+                        </div>
+                    </li>
+                }
+                @*End for loop here
+            </ul>
+        </div>*@
+
+}
+
+
+

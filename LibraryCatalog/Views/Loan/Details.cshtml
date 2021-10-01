@@ -1,0 +1,68 @@
+﻿@model LibraryCatalog.Models.BookLoan
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>BookLoan</h4>
+    <hr />
+    <dl class="row">
+        
+        <dt class = "col-sm-2">
+            Date Received
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.IssueDate.ToShortDateString()
+        </dd>
+        <dt class = "col-sm-2">
+            Due Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.ReturnByDate.ToShortDateString()
+        </dd>
+        <dt class = "col-sm-2">
+            Actual Return Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.ReturnDate.ToShortDateString()
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Book)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Book.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            Member
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationUser.FirstName) @Html.DisplayFor(model => model.ApplicationUser.LastName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.BookLoanId">Edit</a> |
+    @if (Model.IssuedBy == null)
+    {
+        <form asp-action="Issue" asp-route-id="@Model.BookLoanId">
+            <button class="btn-success" name="issueButton" value="Issue" type="submit">Approve</button>
+            <button class="btn-warning" name="issueButton" value="Reject" type="submit">Reject</button>
+        </form>
+    }
+    @if (Model.Fine == true && Model.FineSettled == false)
+    {
+        <form asp-action="Return" asp-route-id="@Model.BookLoanId">
+            <button class="btn-success" name="btnEdit" value="Settle" type="submit">Settled & Return</button>
+        </form>
+    }
+    @if (Model.ReturnDate.Year == 0001)
+    {
+        <form asp-action="Return" asp-route-id="@Model.BookLoanId" method="post">
+            <button class="btn-success" name="btnEdit" value="Return" type="submit">Return</button>
+        </form>
+    }
+    <a asp-action="Index">Back to List</a>
+</div>

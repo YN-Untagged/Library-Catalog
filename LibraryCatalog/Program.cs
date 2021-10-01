@@ -28,9 +28,11 @@ namespace LibraryCatalog
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<DAL.LibraryDbContext>();
+                    var context = services.GetRequiredService<Data.LibraryDbContext>();
                     context.Database.EnsureCreated();
-                    DAL.LibraryInitializer.Initialize(context);
+                    Data.LibraryDbInitializer.Initialize(context);
+                    Data.LibraryDbInitializer.FineUpdate(context);
+                    //Data.AutoUpdates.UpdateFine(context);
                 }
                 catch (Exception ex)
                 {

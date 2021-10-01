@@ -1,63 +1,158 @@
-﻿@model LibraryCatalog.Models.Book
+﻿@model LibraryCatalog.ViewModels.BooksViewModel
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Book Information</h1>
 
-<div>
-    <h4>Book</h4>
-    <hr />
-    <img src="~/images/@Model.URL" />
-    <dl class="row">
+<div class="form-group">
+    <table width="100%">
+        <tr class="row">
+            <td style="width: 30%;">
+                <img style="width:300px; height:450px;" src="~/images/@Model.GetBook.Image">
+            </td>
+            <td style="width: 70%;">
+                <p><h3>@Model.GetBook.Title</h3></p>
+                <p>ISBN: @Model.GetBook.ISBN</p>
+                <p>@Model.GetBook.Pages pages</p>
+                <p>
+                    <h4>Book Summary</h4>
+                    @Model.GetBook.Description
+                </p>
+                
+            </td>
+        </tr>
+    </table>
+    
+</div>
+<div class="row">
+    @if (User.IsInRole("Librarian") || User.IsInRole("Administrator"))
+    {
+        <a class="btn btn-info" asp-action="Edit" asp-route-id="@Model.GetBook.BookId"><i class="fa fa-pen">Edit</i></a>
+        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.GetBook.BookId"><i class="fa fa-trash"> Delete </i> </a>
+    }
+    else
+    {
+        <a class="btn btn-primary" asp-controller="Loan" asp-action="Create" asp-route-id="@Model.GetBook.BookId">Loan Book</a>
+    }
+    <br />
+    <a class="btn btn-dark" asp-action="Index">Back to List</a>
+</div>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ISBN)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ISBN)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pages)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pages)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Genre)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Genre)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Year)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Year)
-        </dd>
-        @*<dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.URL)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.URL)
-            </dd>*@
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Publisher)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Publisher)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.BookId">Edit</a> |
-    <a asp-action="Delete" asp-route-id="@Model.BookId">Delete</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+<hr />
+<section class="wrapper">
+    <h3>Reviews for  @Model.GetBook.Title </h3>
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-md-8">
+                <b>Average Ratings: </b>
+                @for (int s = 1; s < 6; s++)
+                {
+                    if (s <= Model.averageRating)
+                    {
+                        <span class="fa fa-star checked"></span>
+                    }
+                    else
+                    {
+                        <span class="fa fa-star"></span>
+                    }
+                }
+                (@Model.GetReviews.Count() reviews)
+
+                <div class="headings d-flex justify-content-between align-items-center mb-3 border" style="padding:50px;">
+
+
+
+                    @if (User.IsInRole("Member"))
+                    {
+                        <form asp-controller="Review" asp-action="Create">
+                            <h4>Write Review</h4>
+                            @if (ViewBag.Reviewed == false)
+                            {
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input class="form-control" asp-for="BookId" value="@Model.GetBook.BookId" type="hidden" />
+                                <div class="form-group">
+                                    <label asp-for="Rating"></label><br />
+                                    <fieldset class="rating">
+                                        <input type="radio" id="star5" value="5" asp-for="Rating" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                        <input type="radio" id="star4" value="4" asp-for="Rating" /><label class="full" for="star4" title="Good - 4 stars"></label>
+                                        <input type="radio" id="star3" value="3" asp-for="Rating" /><label class="full" for="star3" title="Okay - 3 stars"></label>
+                                        <input type="radio" id="star2" value="2" asp-for="Rating" /><label class="full" for="star2" title="Bad - 2 stars"></label>
+                                        <input type="radio" id="star1" value="1" asp-for="Rating" /><label class="full" for="star1" title="Awful - 1 star"></label>
+                                    </fieldset><br />
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" asp-for="Comment" placeholder="Write your review here..." rows="4" cols="60"></textarea>
+                                    <span asp-validation-for="Comment" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Submit" class="btn btn-primary" />
+                                </div>
+                            }
+                            else
+                            {
+                                <p> You have already written a review for this book.</p>
+                            }
+                        </form>
+
+                    }
+                    else
+                    {
+                        <p>
+                            Signin or sign up to review book<br />
+                            <a class="btn btn-info" asp-area="Identity" asp-page="/Account/Login">Signin</a>
+                        </p>
+                    }
+
+                </div>
+
+                <h1>Reviews</h1>
+                @foreach (var item in Model.GetReviews)
+                {
+                    <div class="commentCard p-3 mt-2">
+                        <div class="d-lg-table-row">
+                            <div class="user d-lg-table-row flex-row align-items-center">
+                                @for (int s = 1; s < 6; s++)
+                                {
+                                    <a>
+                                        @if (s <= item.Rating)
+                                        {
+                                            <i class="fa fa-star checked"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fa fa-star"></i>
+                                        }
+                                    </a>
+                                }
+                            </div>
+
+                            <div class="user d-lg-table-row flex-row align-items-center">
+                                <img src="~/images/User.png" width="30" class="user-img rounded-circle mr-2">
+                                <span>
+                                    <small class="font-weight-bold text-primary">@Html.DisplayFor(modelItem => item.ApplicationUser.FirstName)</small>
+                                </span>
+                                <small>@item.ReviewDate.ToShortDateString()</small><br />
+                            </div>
+
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                            <div class="reply px-4">
+                                <small>@Html.DisplayFor(modelItem => item.Comment)</small>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="toggle_btn">
+        <div class="toggle_btn">
+            <span class="toggle_text">Show More</span>
+            <span class="arrow"><i class="fas fa-angle-down"></i></span>
+        </div>
+    </div>
+</section>
+<br />

@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{ 
+    string role;
+}
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        @if (User.IsInRole("Administrator"))
+        {
+            role = "admin";
+        }
+        else if (User.IsInRole("Librarian"))
+        {
+            role = "librarian";
+        }
+        else
+        {
+            role = "member";
+        }
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name! <b>(@role)</b></a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button id="logout_btn"type="submit" class="nav-link btn btn-dark text-light">Logout</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">
+                <i class="fa fa-unlock-alt"></i>
+                Login
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">
+                <i class="fa fa-user-plus">
+                </i>
+                Register
+            </a>
+        </li>
+    }
+    @*style="position:absolute; right:0;"*@
+</ul>
+

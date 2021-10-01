@@ -11,26 +11,30 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.FullName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.FullName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Surname)
+            @Html.DisplayNameFor(model => model.Biography)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Surname)
+            @Html.DisplayFor(model => model.Biography)
         </dd>
     </dl>
     <table>
         <tr>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
+            @foreach (var item in ViewBag.books as IEnumerable<BookAuthor>)
+            {
+                <td >
+                    <a asp-controller="Book" asp-action="Details" asp-route-id="@item.BookId">
+                        <img src="~/images/@item.Book.Image" class="img-preview" />
+                        <p>@item</p>
+                    </a>
+                </td>
+            }
+
         </tr>
     </table>
 </div>

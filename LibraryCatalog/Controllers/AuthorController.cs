@@ -5,68 +5,63 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using LibraryCatalog.DAL;
+using LibraryCatalog.Data;
 using LibraryCatalog.Models;
 using LibraryCatalog.ViewModels;
+using Microsoft.AspNetCore.Identity;
+using LibraryCatalog.Interfaces;
 
 namespace LibraryCatalog.Controllers
 {
     public class AuthorController : Controller
     {
-        private readonly LibraryDbContext _context;
+        private readonly IAuthor _author;
+        private readonly IBook _book;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public AuthorController(LibraryDbContext context)
+        public AuthorController(IAuthor author, IBook book, UserManager<ApplicationUser> userManager)
         {
-            _context = context;
+            _author = author;
+            _book = book;
+            _userManager = userManager;
+        }
+
+        public ViewResult List()
+        {
+            IEnumerable<Author> authors;
+            var authorBooks = _book.GetBookAuthors();
+            authors = _author.GetAuthors();
+
+            return View(new BooksViewModel
+            {
+                Authors = authors,
+                BooksByAuthor = authorBooks,
+            });
         }
 
         // GET: Author
         public IActionResult Index()
         {
-            var result = (from ba in _context.BookAuthors
-                          join a in _context.Authors
-                          on ba.AuthorId equals a.AuthorId
-                          join b in _context.Books
-                          on ba.BookId equals b.BookId
-                          select new BookAuthorViewModel
-                          {
-                              AuthorId = a.AuthorId,
-                              Name = a.Name,
-                              Surname = a.Surname,
-                              BookId = b.BookId,
-                              Title = b.Title
-                          }).ToList();
-
-            return View(result);
+            List();
+            return View();
         }
 
         // GET: Author/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var author = (from ba in _context.BookAuthors
-                          join a in _context.Authors
-                          on ba.AuthorId equals a.AuthorId
-                          join b in _context.Books
-                          on ba.BookId equals b.BookId
-                          select new BookAuthorViewModel
-                          {
-                              AuthorId = a.AuthorId,
-                              Name = a.Name,
-                              Surname = a.Surname,
-                              BookId = b.BookId,
-                              Title = b.Title
-                          }).FirstOrDefault(a => a.AuthorId == id);
-
-            //var author = await _context.Authors.FirstOrDefault(m => m.AuthorId == id);
+            var author = _author.GetAuthorById(Convert.ToInt32(id));
+            var  books = _book.GetBookAuthors().Where(a => a.AuthorId == id).ToList();
             if (author == null)
             {
                 return NotFound();
             }
+
+            ViewBag.books = books;
 
             return View(author);
         }
@@ -80,26 +75,28 @@ namespace LibraryCatalog.Controllers
         // POST: Author/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AuthorId,Name,Surname")] Author author)
+        public IActionResult Create([Bind("AuthorId,FullName,Biography")] Author author)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(author);
-                await _context.SaveChangesAsync();
+                author.CreatedBy = _userManager.GetUserId(User);
+                author.CreateDateTime = System.DateTime.Now;
+                _author.Add(author);
+                _author.Save();
                 return RedirectToAction(nameof(Index));
             }
             return View(author);
         }
 
         // GET: Author/Edit
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var author = await _context.Authors.FindAsync(id);
+            var author = _author.GetAuthorById(Convert.ToInt32(id));
             if (author == null)
             {
                 return NotFound();
@@ -110,7 +107,7 @@ namespace LibraryCatalog.Controllers
         // POST: Author/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AuthorId,Name,Surname")] Author author)
+        public async Task<IActionResult> Edit(int id, [Bind("AuthorId,FullName,Biography")] Author author)
         {
             if (id != author.AuthorId)
             {
@@ -121,8 +118,10 @@ namespace LibraryCatalog.Controllers
             {
                 try
                 {
-                    _context.Update(author);
-                    await _context.SaveChangesAsync();
+                    author.EditedBy = _userManager.GetUserId(User);
+                    author.EditedDate = System.DateTime.Now;
+                    _author.Edit(author);
+                    _author.Save();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -148,8 +147,7 @@ namespace LibraryCatalog.Controllers
                 return NotFound();
             }
 
-            var author = await _context.Authors
-                .FirstOrDefaultAsync(m => m.AuthorId == id);
+            var author = _author.GetAuthorById(Convert.ToInt32(id));
             if (author == null)
             {
                 return NotFound();
@@ -161,17 +159,17 @@ namespace LibraryCatalog.Controllers
         // POST: Author/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var author = await _context.Authors.FindAsync(id);
-            _context.Authors.Remove(author);
-            await _context.SaveChangesAsync();
+            var author = _author.GetAuthorById(id);
+            _author.Delete(author);
+            _author.Save();
             return RedirectToAction(nameof(Index));
         }
 
         private bool AuthorExists(int id)
         {
-            return _context.Authors.Any(e => e.AuthorId == id);
+            return _author.AuthorExists(id);
         }
     }
 }

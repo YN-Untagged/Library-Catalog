@@ -1,8 +1,11 @@
-﻿using LibraryCatalog.DAL;
+﻿using LibraryCatalog.Data;
+using LibraryCatalog.Interfaces;
 using LibraryCatalog.Models;
 using LibraryCatalog.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -16,172 +19,112 @@ namespace LibraryCatalog.Controllers
 {
     public class BookController : Controller
     {
-        private readonly LibraryDbContext _context;
-        //private readonly IHostingEnvironment hostingEnvironment;
+        private readonly IBook _book;
+        private readonly IReview _review;
+        private readonly ILoan _loan;
+        private readonly IAuthor _author;
+        private readonly UserManager <ApplicationUser> _userManager;
         private readonly IWebHostEnvironment hostEnvironment;
 
-        public BookController(LibraryDbContext context, IWebHostEnvironment hostEnvironment)
+        public BookController( IBook book, IReview review, ILoan loan, IAuthor author, UserManager<ApplicationUser> userManager, IWebHostEnvironment hostEnvironment)
         {
-            _context = context;
+            _loan = loan;
+            _book = book;
+            _review = review;
+            _author = author;
+            _userManager = userManager;
             this.hostEnvironment = hostEnvironment;
         }
 
-        public ViewResult List(string genre = null)
+        public static IEnumerable<SelectListItem> GetSelectLists<T>()
         {
-            //System.DateTime date = new DateTime(1999);
-            //IEnumerable<Book> books;
-            List<BookAuthorViewModel> books;
-            //IEnumerable<Book> popular;
-            IEnumerable<Book> latest;
+            return (Enum.GetValues(typeof(T)).Cast<T>().Select(
+                enumList => new SelectListItem() { Text = enumList.ToString(), Value = enumList.ToString() })).ToList();
+        }
+
+        public ViewResult List(string genre)
+        {
+          
+            List<Book> books;
             if (genre != null)
             {
-                //books = _context.Books.Where(b => b.Genre == genre).ToList();
-                books = (from b in _context.Books
-                        join ba in _context.BookAuthors
-                        on b.BookId equals ba.BookId
-                        join a in _context.Authors
-                        on ba.AuthorId equals a.AuthorId
-                         where b.Genre == genre
-                        select new BookAuthorViewModel
-                        {
-                            BookId = b.BookId,
-                            ISBN = b.ISBN,
-                            Title = b.Title,
-                            Publisher = b.Publisher,
-                            Year = b.Year,
-                            URL = b.URL,
-                            Name = a.Name,
-                            Surname = a.Surname,
-                            Genre = b.Genre
-                        } ).ToList();
+                books = _book.GetBooks().Where(b => b.Genre == genre).ToList();
             }
             else
             {
-                books = (from b in _context.Books
-                         join ba in _context.BookAuthors
-                                 on b.BookId equals ba.BookId
-                         join a in _context.Authors
-                         on ba.AuthorId equals a.AuthorId
-                         select new BookAuthorViewModel
-                         {
-                             BookId = b.BookId,
-                             ISBN = b.ISBN,
-                             Title = b.Title,
-                             Publisher = b.Publisher,
-                             Year = b.Year,
-                             URL = b.URL,
-                             Name = a.Name,
-                             Surname = a.Surname,
-                             Genre = b.Genre
-                         }).ToList();
+                books = _book.GetBooks().ToList();
             }
 
-            
-            //popular = _context.Books.ToList();
-            //latest = _context.Books.Where(b => b.Year >= (Convert.ToInt32(date)-2 )).ToList();
-            latest = _context.Books.Where(b => b.Year >= 2000).ToList();
+            var latest = _book.GetBooks().Where(y => y.Year >= System.DateTime.Now.Year - 1);
+            var popular = _loan.MostLoaned();
+            var authors = _book.GetAuthors();
+            var reviews = _review.GetRatings();
 
             return View(new BooksViewModel
             {
-                //NewBooks = latest.OrderByDescending(y => y.Year),
-                //AllBooks = books
+                AllBooks = books,
+                BookAuthors = authors,
+                GetBooksRating = reviews,
+                PopularBooks = popular,
+                NewBooks = latest
+            });
+        }
+        public ViewResult List(int id)
+        {
+            var book = _book.GetBookById(id);
+            var reviews = _review.GetReviewsByBookId(id).OrderByDescending(d => d.ReviewDate);
+            var average = -1;
+            if(reviews.Any())
+            {
+                average = (int)reviews.Average(r => r.Rating);
+            }
+            //var rating = _review.GetReviewsByBookId(id).Sum(d => d.Rating) / reviews.Count();
+            return View(new BooksViewModel
+            {
+                GetBook = book,
+                GetReviews = reviews,
+                averageRating = average
             });
         }
 
-
         public IActionResult Index(string genre)
         {
-            List<BookAuthorViewModel> books;
-            
-            if (genre != null)
-            {
-                //Book of specific genre
-                books = (from b in _context.Books
-                         join ba in _context.BookAuthors
-                         on b.BookId equals ba.BookId
-                         join a in _context.Authors
-                         on ba.AuthorId equals a.AuthorId
-                         where b.Genre == genre
-                         select new BookAuthorViewModel
-                         {
-                             BookId = b.BookId,
-                             ISBN = b.ISBN,
-                             Title = b.Title,
-                             Publisher = b.Publisher,
-                             Year = b.Year,
-                             URL = b.URL,
-                             Name = a.Name,
-                             Surname = a.Surname,
-                             Genre = b.Genre
-                         }).ToList();
-            }
-            else
-            {
-                //Get all Books
-                /*books = (from b in _context.Books
-                         join ba in _context.BookAuthors
-                         on b.BookId equals ba.BookId
-                         join a in _context.Authors
-                         on ba.AuthorId equals a.AuthorId
-                         select new BookAuthorViewModel
-                         {
-                             BookId = b.BookId,
-                             ISBN = b.ISBN,
-                             Title = b.Title,
-                             Publisher = b.Publisher,
-                             Year = b.Year,
-                             URL = b.URL,
-                             Name = a.Name,
-                             Surname = a.Surname,
-                             Genre = b.Genre
-                         }).ToList();*/
-                books = (from b in _context.Books
-                         join ba in _context.BookAuthors
-                         on b.BookId equals ba.BookId
-                         join a in _context.Authors
-                         on ba.AuthorId equals a.AuthorId
-                         select new BookAuthorViewModel
-                         {
-                             BookId = b.BookId,
-                             ISBN = b.ISBN,
-                             Title = b.Title,
-                             Publisher = b.Publisher,
-                             Year = b.Year,
-                             URL = b.URL,
-                             Name = a.Name,
-                             Surname = a.Surname,
-                             Genre = b.Genre
-                         }).ToList();
-            }
+            List(genre);
 
-            return View(books);
+            return View();
         }
-
+        public IActionResult Main()
+        {
+            List(null);
+            return View();
+        }
         
 
         // Get book details
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
-            var book = await _context.Books
-                .FirstOrDefaultAsync(m => m.BookId == id);
-            if (book == null)
+            else
             {
-                return NotFound();
+                List((int)id);
             }
 
-            return View(book);
+            ViewBag.Reviewed = _review.GetReviewsByBookId((int)id).Any(u => u.UserId == _userManager.GetUserId(User));
+
+            return View();
         }
 
         // GET (Create Book)
+        [Authorize(Policy = "writepolicy")]
         public IActionResult Create()
         {
-            var authors = _context.Authors;
-            ViewData["authors"] = authors;//new List<Author> authors(_context.Authors, "AuthorId", ("Name" +" "+ "Surname"));
+            var authors = _author.GetAuthors();
+            ViewData["authors"] = authors;
+            ViewData["genres"] = GetSelectLists<Genres>();
+            ViewData["status"] = GetSelectLists<BookStatus>();
 
 
             return View(new BooksViewModel
@@ -191,11 +134,11 @@ namespace LibraryCatalog.Controllers
         }
 
         // POST (Create Book)
+        [Authorize(Policy = "writepolicy")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(BooksViewModel bookVM)
-        {
-           
+        public ActionResult Create([Bind("BookId,ISBN,Title,Pages,Genre,Year,Image,Publisher,Language,Description,Price,InputAuthors, SelectedAuthors,BookCover")] BooksViewModel bookVM)
+        {        
             string fileName = null;
 
             if (bookVM.BookCover != null)
@@ -217,68 +160,87 @@ namespace LibraryCatalog.Controllers
                 book.Pages = bookVM.Pages;
                 book.Publisher = bookVM.Publisher;
                 book.Year = bookVM.Year;
-                book.URL = fileName;
+                book.Image = fileName;
                 book.Genre = bookVM.Genre;
-                
+                book.Language = bookVM.Language;
+                book.Price = bookVM.Price;
+                book.Status = "Available";
+                book.Description = bookVM.Description;
+               
             }
-            _context.Add(book);
-            _context.SaveChanges();
+            _book.Add(book);
+            _book.Save();
             var bookId = book.BookId;
 
             if (bookId != 0)
             {
-                var author = (from a in _context.Authors
-                             where a.Name == bookVM.AuthorName
-                             where a.Surname == bookVM.AuthorLastName
-                             select a.AuthorId).FirstOrDefault();
-                if (author != 0)
+                if (bookVM.SelectedAuthors != null)
                 {
-                    var authorId = author;
-                    AddBookAuthor(authorId, bookId);
+                    AddBookAuthor(bookVM.SelectedAuthors, bookId);
                 }
-                else
+
+                for (int i = 0; i < bookVM.InputAuthors.Count(); i++)
                 {
-                    AddAuthor(bookVM.AuthorName, bookVM.AuthorLastName, bookId);
+                    if(bookVM.InputAuthors[i] != null)
+                    {
+                        AddAuthor(bookVM.InputAuthors, bookId);
+                        break;
+                    }
                 }
             }
 
             return RedirectToAction("Details", new { id = bookId.ToString()});
         }
 
-        private void AddAuthor(string authorName, string authorLastName, int bookId)
+        private void AddAuthor(string[] authors, int bookId)
         {
-            var author = new Author();
+            //int[] authorIds = { };
+            List<int> authorIds = new List<int>();
+            for (int a = 0; a < authors.Length; a++)
             {
-                author.Name = authorName;
-                author.Surname = authorLastName;
+                if (authors[a] != null)
+                {
+                    var author = new Author();
+                    {
+                        author.FullName = authors[a];
+                    }
+                    _author.Add(author);
+                    _author.Save();
+                    authorIds.Add(author.AuthorId);
+                }
             }
-            _context.Add(author);
-            _context.SaveChanges();
-            var authorId = author.AuthorId;
-            AddBookAuthor(authorId, bookId);
+            
+            AddBookAuthor(authorIds.ToArray(), bookId);
         }
 
-        private void AddBookAuthor(int authorId, int bookId)
+        private void AddBookAuthor(int[] authors, int bookId)
         {
-            var bookAuthor = new BookAuthor();
+            for (int i = 0; i < authors.Length; i++)
             {
-                bookAuthor.AuthorId = authorId;
-                bookAuthor.BookId = bookId;
+                var bookAuthor = new BookAuthor();
+                {
+                    bookAuthor.AuthorId = authors[i];
+                    bookAuthor.BookId = bookId ;
+                }
+                _author.AddBookAuthor(bookAuthor);
             }
-            _context.Add(bookAuthor);
-            _context.SaveChanges();
+            //bookAuthor.ForEach(b => _context.BookAuthors.Add(b));
+            _author.Save();
         }
 
         // GET: Book/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        [Authorize(Policy = "writepolicy")]
+        public IActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var book = await _context.Books.FindAsync(id);
-                       
+            var book = _book.GetBookById(Convert.ToInt32(id));
+            ViewData["genres"] = GetSelectLists<Genres>();
+            ViewData["status"] = GetSelectLists<BookStatus>();
+
             if (book == null)
             {
                 return NotFound();
@@ -286,9 +248,10 @@ namespace LibraryCatalog.Controllers
             return View(book);
         }
 
+        [Authorize(Policy = "writepolicy")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id,IFormFile BookCover,[Bind("BookId,ISBN,Title,Pages,Genre,Year,URL,Publisher")] Book book)
+        public IActionResult Edit(int id,IFormFile BookCover,[Bind("BookId,ISBN,Title,Pages,Genre,Year,Image,Publisher, Status, Price, Language,AmazonUrl,Description,TakeAlotUrl")] Book book)
         {
             if (id != book.BookId)
             {
@@ -300,15 +263,15 @@ namespace LibraryCatalog.Controllers
                 if (BookCover != null)
                 {
                     string UploadFolder = Path.Combine(hostEnvironment.WebRootPath + "/images");
-                    book.URL = Guid.NewGuid().ToString() + "_" + BookCover.FileName;
-                    string filePath = Path.Combine(UploadFolder, book.URL);
+                    book.Image = Guid.NewGuid().ToString() + "_" + BookCover.FileName;
+                    string filePath = Path.Combine(UploadFolder, book.Image);
                     BookCover.CopyTo(new FileStream(filePath, FileMode.Create));
                 }
                 try
                 {
                     
-                    _context.Update(book);
-                    await _context.SaveChangesAsync();
+                    _book.Edit(book);
+                    _book.Save();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -321,118 +284,23 @@ namespace LibraryCatalog.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", new { id = id.ToString() });
             }
             return View(book);
         }
 
-        
-
-        /*// GET (Edit book)
-        public ViewResult GetBook(int? id)
-        {
-            Book books;
-            books = _context.Books.Find(id);
-
-            return View(new EditBookViewModel
-            {
-                GetBookById = books
-            }) ;
-        }
-        public IActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            //GetBook(id);
-            Book book;
-            //BooksViewModel book = new BooksViewModel();
-            book = _context.Books.Find(id);
-             /*var book = (from b in _context.Books
-                    where b.BookId == id
-                    select new BooksViewModel
-                    {
-                        BookId = b.BookId,
-                        Title = b.Title,
-                        ISBN = b.ISBN,
-                        Pages = b.Pages,
-                        Genre = b.Genre,
-                        URL = b.URL,
-                        Publisher = b.Publisher,
-                        Year = b.Year
-                    });
-
-            return View(book);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, EditBookViewModel book)
-        {
-            if (id == 0) //book.BookId)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                string fileName = null;
-
-                if (book.BookCover != null)
-                {
-                    string UploadFolder = Path.Combine(hostEnvironment.WebRootPath + "/images");
-                    fileName = Guid.NewGuid().ToString() + "_" + book.BookCover.FileName;
-                    string filePath = Path.Combine(UploadFolder, fileName);
-                    book.BookCover.CopyTo(new FileStream(filePath, FileMode.Create));
-                }
-                try
-                {
-                    var b = new Book();
-                    {
-                        b.BookId = id;
-                        b.ISBN = book.ISBN;
-                        b.Title = book.Title;
-                        b.Pages = book.Pages;
-                        b.Genre = book.Genre;
-                        b.Year = book.Year;
-                        b.Publisher = book.Publisher;
-                        if (fileName != null)
-                        {
-                            b.URL = fileName;
-                        }
-                    }
-                    
-                    _context.Update(b);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction("Detail", new { id = id.ToString() });
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BookExists(book.BookId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-            }
-            return View(book);
-        }*/
 
         // GET: Book/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        [Authorize(Policy = "writepolicy")]
+        public IActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var book = await _context.Books
-                .FirstOrDefaultAsync(m => m.BookId == id);
+            var book = _book.GetBookById(Convert.ToInt32(id));
             if (book == null)
             {
                 return NotFound();
@@ -442,19 +310,20 @@ namespace LibraryCatalog.Controllers
         }
 
         // POST: Book/Delete/5
+        [Authorize(Policy = "writepolicy")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var book = await _context.Books.FindAsync(id);
-            _context.Books.Remove(book);
-            await _context.SaveChangesAsync();
+            var book = _book.GetBookById(id);
+            _book.Delete(book);
+            _book.Save();
             return RedirectToAction(nameof(Index));
         }
 
         private bool BookExists(int id)
         {
-            return _context.Books.Any(e => e.BookId == id);
+            return _book.BookExists(id);
         }
 
     }

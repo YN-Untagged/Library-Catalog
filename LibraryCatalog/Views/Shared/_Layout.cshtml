@@ -6,41 +6,121 @@
     <title>@ViewData["Title"] - LibraryCatalog</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/css/bootstrap-multiselect.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Library</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        <div class="container full-width text-center">
+            <center>
+                <h1>Library Catalog</h1>
+            </center>
+            
+        </div>
+        <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark text-light" id="navbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link text-light" asp-controller="Book" asp-action="Main">
+                            <i class="fa fa-home"></i>
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    @if (User.IsInRole("Administrator") || User.IsInRole("Librarian"))
+                    {
+                        <li class="nav-item ">
+                            <a class="nav-link text-light" asp-controller="Librarian" asp-action="DashBoard">
+                                <i class="fa fa-desktop"></i>
+                                DashBoard
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Book" asp-action="Index">Books</a>
+                    }
+                    else if (User.IsInRole("Member"))
+                    {
+                        <li class="nav-item ">
+                            <a class="nav-link text-light" asp-controller="Member" asp-action="DashBoard">
+                                <i class="fa fa-desktop">
+                                </i>
+                                DashBoard
+                            </a>
                         </li>
+                    }
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-controller="Book" asp-action="Index">
+                            <i class="fa fa-book">
+                            </i>
+                            Catalog
+                        </a>
+                    </li>
+                    @if (User.IsInRole("Administrator") || User.IsInRole("Librarian"))
+                    {
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Author" asp-action="Index">Authors</a>
+                            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-users">
+                                </i>
+                                Users
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Add User</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">All Users</a>
+                                <a class="dropdown-item" asp-controller="Member" asp-action="Index">Members</a>
+                                @if (User.IsInRole("Administrator"))
+                                {
+                                    <a class="dropdown-item" asp-controller="Librarian" asp-action="Index">Librarians</a>
+                                }
+
+
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-shopping-cart">
+                                </i>
+                                Loans
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="Loan" asp-action="Requests">Pending Requests</a>
+                                <a class="dropdown-item" asp-controller="Loan" asp-action="Outstanding">Checked Out</a>
+                                <a class="dropdown-item" asp-controller="Loan" asp-action="Index">All Loans</a>
+                            </div>
                         </li>
-                    </ul>
-                </div>
+                    }
+                </ul>
+                <partial name="_LoginPartial" />
             </div>
         </nav>
+        
     </header>
     <div class="container">
+        @if (TempData["message"] != null)
+        {
+            <dialog class="alert-primary" id="messageBox" open="true">
+
+                @TempData["message"]
+                <br />
+                <button id="close" type="button" onclick="Close()">Close</button>
+            </dialog>
+            <script>
+                function Close() {
+                    document.getElementById('messageBox').style.display = 'none';
+                }
+            </script>
+        }
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
+    <br />
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - LibraryCatalog - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -49,6 +129,11 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/bootstrap-multiselect.js"></script>
+    <script src="~/js/JQuery3.3.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -1,0 +1,87 @@
+﻿@model LibraryCatalog.Models.BookLoan
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Loan Book</h1>
+<hr />
+<div class="row">
+        @if (User.IsInRole("Administrator") || User.IsInRole("Librarian"))
+        {
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="BookId" class="control-label"></label>
+                    <select asp-for="BookId" class="form-control" asp-items="ViewBag.BookId"></select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="UserId" class="control-label">Member Name</label>
+                    <select asp-for="UserId" class="form-control">
+                        @foreach (var m in ViewBag.UserId)
+                        {
+                            <option value="@m.Id"> @m.FirstName @m.LastName</option>
+                        }
+
+                    </select>
+                </div>
+                <input asp-for="IssuedBy" value="@ViewBag.creatorID" hidden />
+                <div class="form-group">
+                    <label>Return Date</label>
+                    <p class="form-control"> @System.DateTime.Today.Date</p>
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="btnCreate" value="Issue" class="btn btn-primary" />
+                </div>
+            </form>
+        }  
+        else if (User.IsInRole("Member"))
+        {
+<form asp-action="Create">
+    <input asp-for="UserId" value="@ViewBag.creatorID" hidden />
+    <p class="alert-warning"><b>Note: </b>You will be given a maximum of ten days to return the book, calculated from the day the book is issued to you.</p>
+
+    <h2>Selected Book</h2>
+    <div class="form-group">
+        <table width="100%">
+            <tr class="row">
+                <td style="width: 30%;">
+                    <img style="width:300px; height:450px;" src="~/images/@ViewBag.Book.Image">
+                </td>
+                <td style="width: 70%;">
+                    <p><h3>@ViewBag.Book.Title</h3></p>
+                    <p>ISBN: @ViewBag.Book.ISBN</p>
+                    <p>@ViewBag.Book.Pages pages</p>
+                    <p>
+                        <h6>Book Summary</h6>
+                        @ViewBag.Book.Description
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <input asp-for="BookId" value="@ViewBag.Book.BookId" hidden />
+    </div>
+    <p class="alert-success">Anticipated Return date if book is issued today: <b>@System.DateTime.Today.AddDays(10).ToShortDateString()</b></p>
+    <p class="alert-danger">
+        <b>NB: </b>Not returning the book on time will result in a fine.<b style="color:red;">(R 3.00 per overdued day)</b><br />
+        If book is lost, you will be liable for the full purchase price of the book.
+    </p>
+    <div class="form-group">
+        <input type="submit" name="btnCreate" value="Request" class="btn btn-primary" />
+    </div>
+</form>
+        }
+</div>
+
+<div>
+    @if (User.IsInRole("Administrator") || User.IsInRole("Librarian"))
+    {
+    <a asp-action="Index">Back to List</a>
+    }
+    else 
+    {
+        <a asp-controller="Book" asp-action="Index">Back to Books</a>
+    }
+</div>
+

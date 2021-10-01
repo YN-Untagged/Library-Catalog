@@ -1,4 +1,7 @@
-﻿using LibraryCatalog.Models;
+﻿using LibraryCatalog.Interfaces;
+using LibraryCatalog.Models;
+using LibraryCatalog.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -18,9 +21,23 @@ namespace LibraryCatalog.Controllers
             _logger = logger;
         }
 
+
+        
         public IActionResult Index()
         {
-            return View();
+            if (User.IsInRole("Member"))
+            {
+                return RedirectToAction("DashBoard", "Member");
+
+            }
+            else if (User.IsInRole("Librarian") || User.IsInRole("Administrator"))
+            {
+                return RedirectToAction("DashBoard", "Librarian");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Book");
+            }
         }
 
         public IActionResult Privacy()

@@ -1,27 +1,87 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+.shelfbook {
+    transform: rotate(-90deg);
+    transform-origin: left top 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: max-content;
+    width: max-content;
+    margin: 0px;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.wrapper {
+    margin: 50px auto 0;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    .wrapper .title {
+        font-weight: 700;
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+
+    .wrapper ul {
+        height: 70px;
+        overflow: hidden;
+        padding-left: 15px;
+    }
+
+        .wrapper ul li {
+            margin-bottom: 5px;
+            list-style: none;
+            position: relative;
+        }
+
+            .wrapper ul li:before {
+                content: "";
+                position: absolute;
+                top: 8px;
+                left: -12px;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: #bfbfbf;
+            }
+
+    .wrapper .toggle_btn {
+        margin-top: 15px;
+        font-weight: 700;
+        color: #ff406c;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    .wrapper ul.active {
+        height: auto;
+    }
+
+    .wrapper .toggle_btn.active .fas {
+        transform: rotate(180deg);
+    }
+
+.mySlides {
+    display: none
+}
+
+.w3-left, .w3-right, .w3-badge {
+    cursor: pointer
+}
+
+.w3-badge {
+    height: 13px;
+    width: 13px;
+    padding: 0
 }
 
 /* Sticky footer styles
@@ -29,6 +89,7 @@ a {
 html {
   font-size: 14px;
 }
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -57,17 +118,23 @@ html {
   position: relative;
   min-height: 100%;
 }
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+body{
+    margin-bottom:60px;
 }
 .footer {
   position: absolute;
+  margin-top: 50px;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+.container{
+    background-color: inherit;
+}
+
+container {
+    background-color: inherit;
 }
 
 /*Book Cover Image Styling*/
@@ -76,56 +143,12 @@ body {
     width: 100px;
 }
 .books {
-    height: 300px;
-    width: 270px;
+    height: 400px;
 }
 .col-4 {
-    width: 25%
-}
-/*Book Flip card styling */
-.column{
-    width : 25%;
-    float : left;
-}
-.flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 350px;
-    perspective: 1000px;
+    width: 33.33%
 }
 
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.flip-card-front {
-    background-color: #bbb;
-    color: black;
-}
-
-.flip-card-back {
-    background-color: black;
-    color: white;
-    transform: rotateY(180deg);
-}
 
 /*Card styling */
 .card {
@@ -133,6 +156,7 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
+    padding: 10px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -144,8 +168,18 @@ body {
 .card .container {
     padding: 2px 16px;
     width: inherit;
-    height: 300px;
+    height: 250px;
     align-content: center;
+}
+
+#bookList .column {
+   width: 33%;
+   float: left;
+   padding: 7px;
+}
+
+.status {
+    width: 100px;
 }
 
 /*Basic sytling*/
@@ -153,3 +187,463 @@ body {
 {
     width: auto;
 }
+
+/*Shopping Links*/
+.icon
+{
+    width: 25px;
+    height: 25px;
+    border: 5px;
+}
+
+/*PopUp Notification Styling*/
+.toast__container {
+    display: table-cell;
+    vertical-align: middle;
+    
+}
+
+.toast__cell {
+    display: inline-block;
+}
+
+.add-margin {
+    margin-top: 20px;
+}
+
+.toast__svg {
+    fill: #fff;
+}
+
+.toast {
+    text-align: left;
+    padding: 21px 0;
+    background-color: #fff;
+    border-radius: 4px;
+    max-width: 500px;
+    top: 0px;
+    position: relative;
+    box-shadow: 1px 7px 14px -5px rgba(0,0,0,0.2);
+}
+
+
+    .toast:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+.toast__icon {
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    padding: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.toast__type {
+    color: #3e3e3e;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.toast__message {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #878787;
+}
+
+.toast__content {
+    padding-left: 70px;
+    padding-right: 60px;
+}
+
+.toast__close {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    width: 14px;
+    cursor: pointer;
+    height: 14px;
+    fill: #878787;
+    transform: translateY(-50%);
+}
+
+.toast--green .toast__icon {
+    background-color: #2BDE3F;
+}
+
+.toast--green:before {
+    background-color: #2BDE3F;
+}
+
+.toast--blue .toast__icon {
+    background-color: #1D72F3;
+}
+
+.toast--blue:before {
+    background-color: #1D72F3;
+}
+
+.toast--yellow .toast__icon {
+    background-color: #FFC007;
+}
+
+.toast--yellow:before {
+    background-color: #FFC007;
+}
+
+/*Five Star Rating Styling********************************/
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+/****** Style Star Rating Widget *****/
+.checked {
+    color: gold;
+}
+.rating {
+    border: none;
+    float: left;
+}
+
+    .rating > input {
+        display: none;
+    }
+
+    .rating > label:before {
+        margin: 5px;
+        font-size: 1.25em;
+        font-family: FontAwesome;
+        display: inline-block;
+        content: "\f005";
+    }
+
+    .rating > .half:before {
+        content: "\f089";
+        position: absolute;
+    }
+
+    .rating > label {
+        color: #ddd;
+        float: right;
+    }
+
+    /*Highlight Stars on Hover */
+
+    .rating > input:checked ~ label, /* show gold star when clicked */
+    .rating:not(:checked) > label:hover, /* hover current star */
+    .rating:not(:checked) > label:hover ~ label {
+        color: #FFD700;
+    }
+        /* hover previous stars in list */
+
+        .rating > input:checked + label:hover, /* hover current star when changing rating */
+        .rating > input:checked ~ label:hover,
+        .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+        .rating > input:checked ~ label:hover ~ label {
+            color: #FFED85;
+        } 
+
+/**Comment**/
+
+.commentCard {
+    border: none;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-radius: 4px
+}
+
+.dots {
+    height: 4px;
+    width: 4px;
+    margin-bottom: 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block
+}
+
+.badge {
+    padding: 7px;
+    padding-right: 9px;
+    padding-left: 16px;
+    box-shadow: 5px 6px 6px 2px #e9ecef
+}
+
+.user-img {
+    margin-top: 4px
+}
+
+.check-icon {
+    font-size: 17px;
+    color: #c3bfbf;
+    top: 1px;
+    position: relative;
+    margin-left: 3px
+}
+
+.form-check-input {
+    margin-top: 6px;
+    margin-left: -24px !important;
+    cursor: pointer
+}
+
+    .form-check-input:focus {
+        box-shadow: none
+    }
+
+.icons i {
+    margin-left: 8px
+}
+
+.reply {
+    margin-left: 12px
+}
+.reply small:hover {
+    color: green;
+    cursor: pointer
+}
+
+
+/********************************************************/
+/*Nav Styling*/
+
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+    position: relative;
+    width: 36px;
+    font-size: 24px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link i hover{
+    color: darkturquoise;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+    font-size: 0.75rem;
+    position: absolute;
+    right: 0;
+    font-family: sans-serif;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+    top: 3px;
+    line-height: 12px;
+}
+
+    .navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+        top: -10px;
+    }
+
+ #logout_btn:hover
+ {
+     background-color: red;
+ }
+
+#sticky_nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    
+    
+}
+
+#navbar {
+    position: fixed sticky;
+    z-index: 5;
+    top: 0px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+@media (min-width: 576px) {
+    .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link {
+        text-align: center;
+        display: table-cell;
+        height: 70px;
+        vertical-align: middle;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+        .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa {
+            display: block;
+            width: 48px;
+            margin: 2px auto 4px auto;
+            top: 0;
+            line-height: 24px;
+        }
+
+            .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa > .badge {
+                top: -7px;
+            }
+}
+
+@media (min-width: 768px) {
+    .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link {
+        text-align: center;
+        display: table-cell;
+        height: 70px;
+        vertical-align: middle;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+        .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa {
+            display: block;
+            width: 48px;
+            margin: 2px auto 4px auto;
+            top: 0;
+            line-height: 24px;
+        }
+
+            .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa > .badge {
+                top: -7px;
+            }
+}
+
+@media (min-width: 992px) {
+    .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
+        text-align: center;
+        display: table-cell;
+        height: 70px;
+        vertical-align: middle;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+        .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa {
+            display: block;
+            width: 48px;
+            margin: 2px auto 4px auto;
+            top: 0;
+            line-height: 24px;
+        }
+
+            .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa > .badge {
+                top: -7px;
+            }
+}
+
+@media (min-width: 1200px) {
+    .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link {
+        text-align: center;
+        display: table-cell;
+        height: 70px;
+        vertical-align: middle;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa {
+            display: block;
+            width: 48px;
+            margin: 2px auto 4px auto;
+            top: 0;
+            line-height: 24px;
+    }
+    .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa > .badge {
+            top: -7px;
+    } 
+              
+}
+
+/***Login and registration page****/
+.avatar {
+    /*vertical-align: middle;*/
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.login {
+    margin: 20px auto;
+    width: 500px;
+    height: auto;
+    border: groove 1px;
+    border-radius: 5px;
+}
+
+.login-screen {
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 5px
+}
+
+.app-title {
+    text-align: center;
+    color: #777;
+}
+
+.login-form {
+    text-align: center;
+}
+
+.login-form .control-group {
+    margin-bottom: 10px;
+}
+
+.login-form input {
+    text-align: center;
+    background-color: #ECF0F1;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 10px 0;
+    width: 250px;
+    transition: border .5s;
+}
+
+input:focus {
+    border: 2px solid #3498DB;
+    box-shadow: none;
+}
+
+.login-form .btn {
+    border: 2px solid transparent;
+    background: #3498DB;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    text-decoration: none;
+    text-shadow: none;
+    border-radius: 3px;
+    box-shadow: none;
+    transition: 0.25s;
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+}
+
+    .btn:hover {
+        background-color: #2980B9;
+    }
+
+.login-link {
+    font-size: 12px;
+    color: #444;
+    display: block;
+    margin-top: 12px;
+}
+

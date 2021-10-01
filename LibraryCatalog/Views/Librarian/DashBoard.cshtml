@@ -1,0 +1,297 @@
+﻿@model LibraryCatalog.ViewModels.DashBoardViewModel
+@{
+    ViewData["Title"] = "Dash Board";
+}
+
+<div class="text-center">
+    @if (User.IsInRole("Administrator"))
+    {
+        <h1>Administrator Dash Board</h1>
+    }
+    else
+    {
+        <h1>Librarian Dash Board</h1>
+    }
+
+</div>
+<div class="wrapper wrapper-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>All books in catalog</h5>
+                    </div>
+
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 class="no-margins">0</h1>
+                                <div class="font-bold text-navy"><small>All books</small></div>
+                            </div>
+
+                            <a class="col-md-6" asp-controller="Author" asp-action="Index">
+                                <h1 class="no-margins">0</h1>
+                                <div class="font-bold text-navy"><small>All authors</small></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <div class="ibox-tools">
+                            <span class="label label-primary float-right">Out</span>
+                        </div>
+                        <h5>Checked out Books</h5>
+                    </div>
+                    <div class="ibox-content">
+
+                        <a class="row" asp-controller="Loan" asp-action="Outstanding">
+                            <div class="col-md-6">
+                                <h1 class="no-margins">@Model.CheckedOut.Count()</h1>
+                                <div class="font-bold text-navy"><small>All checked out</small></div>
+                            </div>
+                            <div class="col-md-6">
+                                <h1 class="no-margins">@Model.OverDued.Count()</h1>
+                                <div class="font-bold text-navy"><small>OverDued</small></div>
+                            </div>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>Outstanding Fines</h5>
+                        <div class="ibox-tools">
+                            <span class="label label-primary">Updated @System.DateTime.Now.ToShortTimeString()</span>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 class="no-margins">@Model.OverDued.Count()</h1><br />
+                                <div class="font-bold text-navy"><small>No. of fines</small></div>
+                            </div>
+                            <div class="col-md-6">
+                                <h1 class="no-margins">R @Model.OverDued.Sum(d => d.FineAmount)</h1><br />
+                                <div class="font-bold text-navy"><small>Total Amount</small></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="ibox ">
+                    <div class="ibox-content">
+                        <div>
+                            <span class="float-right text-right">
+                                <small>Popular book for month: <strong>@System.DateTime.Now.ToString("MMMM")</strong></small>
+                                <br />
+                            </span>
+                            <h3 class="font-bold no-margins">
+                                Book of the Month
+                            </h3>
+                            <h5>@Model.MonthBook.Title</h5>
+                        </div>
+
+                        <div class="m-t-sm">
+
+                            <div class="row">
+                                <a asp-controller="Book" asp-action="Details" asp-route-id="@Model.MonthBook.BookId" class="col-md-8">
+                                    <img src="~/images/@Model.MonthBook.Image" style="width:150px; height: 200px" />
+                                </a>
+
+                                <div class="col-md-4 float-right">
+                                    <p>
+                                        <b> ISBN:</b> @Model.MonthBook.ISBN<br />
+                                        <b>Genre:</b> @Model.MonthBook.Genre<br />
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="m-t-md">
+                            <small class="float-right">
+                                <i class="fa fa-clock-o"> </i>
+                                Update on @System.DateTime.Now.ToShortDateString()
+                            </small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>Library Users</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-4">
+                                <small class="stats-label">All Users</small>
+                                <h4>@Model.GetUsers.Count()</h4>
+                            </div>
+
+                            <div class="col-4">
+                                <small class="stats-label">Females</small>
+                                <h4>@Model.AllFemales</h4>
+                            </div>
+                            <div class="col-4">
+                                <small class="stats-label">Males</small>
+                                <h4>@Model.AllMales</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-4">
+                                <small class="stats-label">All Staff</small>
+                                <h4>@(Model.GetAdmins.Count() + Model.GetLibrarians.Count())</h4>
+                            </div>
+
+                            <a class="col-4">
+                                <small class="stats-label">Administrators</small>
+                                <h4>@Model.GetAdmins.Count()</h4>
+                            </a>
+
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <a asp-controller="Librarian" asp-action="Index" class="col-4">
+                                    <small class="stats-label">Librarians</small>
+                                    <h4>@Model.GetLibrarians.Count()</h4>
+                                </a>
+                            }
+                            else
+                            {
+                                <div class="col-4">
+                                    <small class="stats-label">Librarians</small>
+                                    <h4>@Model.GetLibrarians.Count()</h4>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <a asp-controller="Member" asp-action="Index" class="col-4">
+                                <small class="stats-label">Members</small>
+                                <h4>@Model.GetMembers.Count()</h4>
+                            </a>
+
+                            <div class="col-4">
+                                <small class="stats-label">Females</small>
+                                <h4>@Model.mFemales</h4>
+                            </div>
+                            <div class="col-4">
+                                <small class="stats-label">Males</small>
+                                <h4>@Model.mMales</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <environment names="Development">
+        <script src="~/lib/flot/jquery.flot.js"></script>
+        <script src="~/lib/flot/jquery.flot.tooltip.min.js"></script>
+        <script src="~/lib/flot/jquery.flot.resize.js"></script>
+        <script src="~/lib/flot/jquery.flot.pie.js"></script>
+        <script src="~/lib/flot/jquery.flot.time.js"></script>
+        <script src="~/lib/flot/jquery.flot.spline.js"></script>
+        <script src="~/lib/chartJs/Chart.min.js"></script>
+        <script src="~/lib/peity/jquery.peity.js"></script>
+
+    </environment>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("span.pie").peity("pie", {
+                fill: ['#1ab394', '#d7d7d7', '#ffffff']
+            })
+
+            var d1 = [[1262304000000, 6], [1264982400000, 3057], [1267401600000, 20434], [1270080000000, 31982], [1272672000000, 26602], [1275350400000, 27826], [1277942400000, 24302], [1280620800000, 24237], [1283299200000, 21004], [1285891200000, 12144], [1288569600000, 10577], [1291161600000, 10295]];
+            var d2 = [[1262304000000, 5], [1264982400000, 200], [1267401600000, 1605], [1270080000000, 6129], [1272672000000, 11643], [1275350400000, 19055], [1277942400000, 30062], [1280620800000, 39197], [1283299200000, 37000], [1285891200000, 27000], [1288569600000, 21000], [1291161600000, 17000]];
+
+            var data1 = [
+                { label: "Data 1", data: d1, color: '#17a084' },
+                { label: "Data 2", data: d2, color: '#127e68' }
+            ];
+            $.plot($("#flot-chart1"), data1, {
+                xaxis: {
+                    tickDecimals: 0
+                },
+                series: {
+                    lines: {
+                        show: true,
+                        fill: true,
+                        fillColor: {
+                            colors: [{
+                                opacity: 1
+                            }, {
+                                opacity: 1
+                            }]
+                        },
+                    },
+                    points: {
+                        width: 0.1,
+                        show: false
+                    },
+                },
+                grid: {
+                    show: false,
+                    borderWidth: 0
+                },
+                legend: {
+                    show: false,
+                }
+            });
+            var lineData = {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [
+                    {
+                        label: "Example dataset",
+                        backgroundColor: "rgba(26,179,148,0.5)",
+                        borderColor: "rgba(26,179,148,0.7)",
+                        pointBackgroundColor: "rgba(26,179,148,1)",
+                        pointBorderColor: "#fff",
+                        data: [48, 48, 60, 39, 56, 37, 30]
+                    },
+                    {
+                        label: "Example dataset",
+                        backgroundColor: "rgba(220,220,220,0.5)",
+                        borderColor: "rgba(220,220,220,1)",
+                        pointBackgroundColor: "rgba(220,220,220,1)",
+                        pointBorderColor: "#fff",
+                        data: [65, 59, 40, 51, 36, 25, 40]
+                    }
+                ]
+            };
+
+            var lineOptions = {
+                responsive: true
+            };
+
+
+            var ctx = document.getElementById("lineChart").getContext("2d");
+            new Chart(ctx, { type: 'line', data: lineData, options: lineOptions });
+
+
+        });
+
+    </script>
+}

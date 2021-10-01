@@ -2,106 +2,151 @@
 
 @{
     ViewData["Title"] = "Create";
+
 }
 
 <h1>Add new Book</h1>
 <hr />
 
 <form asp-action="Create" enctype="multipart/form-data">
-    <div class="row">
+    <div class="flex-row" id="bookList">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="col-3" style="width: 800px; float:left;" >
-            <h2>Book Details</h2>
-            <div class="form-group">
-                <label asp-for="ISBN" class="control-label"></label>
-                <input asp-for="ISBN" class="form-control" />
-                <span asp-validation-for="ISBN" class="text-danger"></span>
+        <div class="flex-row" id="bookList">
+            <div class="column">
+                <div class="card" id="bookCard">
+                    <h2>Book Details</h2>
+                    <div class="form-group">
+                        <label asp-for="ISBN" class="control-label"></label>
+                        <input asp-for="ISBN" class="form-control" />
+                        <span asp-validation-for="ISBN" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Pages" class="control-label"></label>
+                        <input asp-for="Pages" class="form-control" />
+                        <span asp-validation-for="Pages" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Genre" class="control-label"></label>
+                        <select asp-for="Genre" class="form-control" asp-items="ViewBag.genres"></select>
+                        <span asp-validation-for="Genre" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BookCover" class="control-label">Upload Book Cover Image</label>
+                        <input asp-for="BookCover" class="form-control-file" type="file" accept="image/*" />
+                        <span asp-validation-for="BookCover" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Language" class="control-label"></label>
+                        <input asp-for="Language" class="form-control" />
+                        <span asp-validation-for="Language" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Status" class="control-label">Upload Book Cover Image</label>
+                        <select asp-for="Status" class="form-control" asp-items="ViewBag.status"></select>
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Pages" class="control-label"></label>
-                <input asp-for="Pages" class="form-control" />
-                <span asp-validation-for="Pages" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Genre" class="control-label"></label>
-                <input asp-for="Genre" class="form-control" />
-                <span asp-validation-for="Genre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BookCover" class="control-label">Upload Book Cover Image</label>
-                <input asp-for="BookCover" class="form-control-file" type="file" accept="image/*"/>
-                <span asp-validation-for="BookCover" class="text-danger"></span>
+            <div class="column" style="width:67%;">
+                <div class="card" id="bookCard">
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label">Book Summary</label>
+                        <textarea asp-for="Description" rows="28" cols="100" placeholder="Write book summary here..."></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="col-3" style="width: 800px; float:left; border-left: 1px solid; border-right: 1px solid;" >
-            <h2>Publish Details</h2>
-            <div class="form-group">
-                <label asp-for="Publisher" class="control-label"></label>
-                <input asp-for="Publisher" class="form-control" />
-                <span asp-validation-for="Publisher" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Year" class="control-label"></label>
-                <input asp-for="Year" class="form-control" />
-                <span asp-validation-for="Year" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="col-3" style="width: 800px; float:left;">
-            <h2>Author Details</h2>
-
-
-            <div class="form-group">
-                <label asp-for="AuthorName" class="control-label">First Name(s)</label>
-                <input asp-for="AuthorName" class="form-control" />
-                <span asp-validation-for="AuthorName" class="text-danger"></span>
-                <label asp-for="AuthorLastName" class="control-label">Last Name</label>
-                <input asp-for="AuthorLastName" class="form-control" />
-                <span asp-validation-for="AuthorLastName" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label>Select Author(s)</label>
-                <select id="authors" class="authors" multiple="multiple">
-                    <option value="0"></option>
-                    @foreach (var a in Model.Authors)
+        <hr />
+        <div class="column" style="width:50%;">
+            <div class="card" id="bookCard">
+                <h2>Author(s) Details</h2>
+                <div class="form-group">
+                    <h5>Select Author(s) from the list</h5>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Select Author(s)</label>
+                    <div class="col-sm-6">
+                        <select asp-for="SelectedAuthors" class="form-control" multiple="multiple" id="Subjects_dropdown" asp-items='new SelectList(Model.Authors, "AuthorId", "FullName")'></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h4 style="color:red;">Author(s) not listed? Click button below to add author</h4>
+                    <a onclick="document.getElementById('id01').style.display='block'" class="btn btn-info text-light">Add author(s)</a>
+                </div>
+                <div style="display:none" id="id01">
+                    @for (int i = 1; i <= 5; i++)
                     {
-                        <option value="@a.AuthorId">@a.FullName</option>
+                        <div class="form-group">
+                            <label>Author @i </label>
+                            <input asp-for="InputAuthors" class="form-control" />
+                        </div>
                     }
-                </select>
+                </div>
+
+
             </div>
+        </div>
 
-            @*<div class="form-group">
-            <label class="control-label">Pick Author from Drop Down</label>
-            <input type="text" list="authors" asp-for="AuthorId"/>
-            <datalist id="authors" class="form-control" >
-                @foreach (var a in Model.Authors)
-                {
-                    <option>@a.FullName</option>
-                }
-            </datalist><br />
+        <div class="column" style="width:50%;">
+            <div class="card" id="bookCard">
+                <h2>Publish Details</h2>
+                <div class="form-group">
+                    <label asp-for="Publisher" class="control-label"></label>
+                    <input asp-for="Publisher" class="form-control" />
+                    <span asp-validation-for="Publisher" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Year" class="control-label"></label>
+                    <input asp-for="Year" class="form-control" />
+                    <span asp-validation-for="Year" class="text-danger"></span>
+                </div>
 
-            </div>*@
-
+                <h2>Buy Url</h2>
+                <div class="form-group">
+                    <label asp-for="AmazonUrl" class="control-label"></label>
+                    <input asp-for="AmazonUrl" class="form-control" />
+                    <span asp-validation-for="AmazonUrl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TakeAlotUrl" class="control-label"></label>
+                    <input asp-for="TakeAlotUrl" class="form-control" />
+                    <span asp-validation-for="TakeAlotUrl" class="text-danger"></span>
+                </div>
+            </div>
         </div>
     </div>
+    <br />
     <div class="row">
-        <div class="form-group">
-            <input type="submit" value="Create" class="btn btn-primary" />
-        </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary"/>
+            </div>
     </div>
 </form>
 
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-dark" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            $('#Subjects_dropdown').multiselect();
+        });
+    </script>
+
 }
